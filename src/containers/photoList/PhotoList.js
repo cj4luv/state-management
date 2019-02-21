@@ -69,7 +69,7 @@ class photoList extends Component {
 
     if (data.length < 1) return <Spinner />;
 
-    console.log(data);
+    // console.log(data);
     return (
       <photo-list onScroll={this.handleScroll}>
         <Wrapper>
