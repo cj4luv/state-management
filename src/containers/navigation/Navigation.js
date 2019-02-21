@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { Wrapper } from './NavigationStyles';
+import { Wrapper, styles } from './NavigationStyles';
 
 class Navigation extends Component {
   constructor(props) {
@@ -12,9 +12,6 @@ class Navigation extends Component {
 
   componentDidMount() {
     this.shareEquallySize();
-  }
-
-  componentWillReceiveProps(nextProps) {
   }
 
   shareEquallySize() {
@@ -46,7 +43,7 @@ class Navigation extends Component {
 
     return (
       <Wrapper isShadow={isShadow} isFixed={isFixed}>
-        <div ref={comp => (this.leftArea = comp)}>{leftElement}</div>
+        <div style={styles.leftBox} ref={comp => (this.leftArea = comp)}>{leftElement}</div>
         <div>{centerElement}</div>
         <div ref={comp => (this.rightArea = comp)}>{rightElemnet}</div>
       </Wrapper>

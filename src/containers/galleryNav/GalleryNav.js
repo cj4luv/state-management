@@ -14,6 +14,26 @@ class GalleryNav extends Component {
     console.log("Navigation did update");
   }
 
+  renderRightElement = count => (
+    <p className="nav-right-btn">
+      {count}
+      /10 선택됨
+    </p>
+  );
+
+  renderLeftElement = (
+    <Button
+      onClick={() => {
+        console.log("back");
+      }}
+      className="nav-left-btn"
+    >
+      <img src={close} alt="" />
+    </Button>
+  );
+
+  renderCenterElement = <p className="nav-title">갤러리</p>;
+
   render() {
     const { count } = this.props;
     return (
@@ -21,23 +41,9 @@ class GalleryNav extends Component {
         <div className="innerContainer" role="banner" data-app>
           <Nav
             isShadow={false}
-            leftElement={
-              <Button
-                onClick={() => {
-                  console.log("back");
-                }}
-                className="nav-left-btn"
-              >
-                <img src={close} alt="" />
-              </Button>
-            }
-            centerElement={<p className="nav-title">갤러리</p>}
-            rightElemnet={
-              <p className="nav-right-btn">
-                {count}
-                /10 선택됨
-              </p>
-            }
+            leftElement={this.renderLeftElement}
+            centerElement={this.renderCenterElement}
+            rightElemnet={this.renderRightElement(count)}
           />
         </div>
       </Wrapper>
@@ -55,9 +61,8 @@ GalleryNav.defaultProps = {
   count: 0
 };
 
-export default Consumer(value => {
-  // console.log('useCount', value);
-  return {
-    count: value.count
-  };
-})(GalleryNav);
+const defaultMapContextToProps = value => ({
+  count: value.count
+});
+
+export default Consumer(defaultMapContextToProps)(GalleryNav);

@@ -17,4 +17,9 @@ export const Wrapper = styled.div`
   box-shadow: ${props => props.isShadow ? '0 2px 4px 0 rgba(0, 0, 0, 0.12)' : 'none'};
 `;
 
-export const tem = null;
+export const styles = {
+  leftBox: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+};
