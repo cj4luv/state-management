@@ -5,8 +5,15 @@ import List from '../../containers/photoList/PhotoList';
 import FooterButton from '../../components/footerButton/FooterButton';
 
 import { Provider as CountProvider } from './Context';
+import Controller from './Controller';
 
 class Gallery extends Component {
+  constructor(props) {
+    super(props);
+
+    this.controller = new Controller();
+  }
+
   componentDidUpdate(prevProps, prevState) {
     console.log("Gallery did update");
   }
@@ -15,7 +22,7 @@ class Gallery extends Component {
     return (
       <CountProvider>
         <Nav />
-        <List />
+        <List controller={this.controller} />
         <FooterButton />
       </CountProvider>
     );

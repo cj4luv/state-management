@@ -1,9 +1,45 @@
-// use setState
+import rafSchedule from 'raf-schd';
 
-// use fetched
+// Gallery
+class GalleryController {
+  constructor() {
+    // Create a new function to schedule updates.
+    // 스크롤 이벤트 호출 최적화 를 위해 rafSchedule 사용
+    this.scheduleUpdate = rafSchedule(this.scrollScheule);
+  }
 
-// processing
+  initialize = (data, callback) => {
+    const arr = data;
 
-// context API
+    for (let i = 0; i < 18; i += 1) {
+      arr.push({
+        id: i,
+      });
+    }
 
-// view
+    return callback(arr);
+  }
+
+  handleScroll = (e, data, callback) => {
+    const { scrollTop, clientHeight, scrollHeight } = e.nativeEvent.target;
+
+    const arr = this.scheduleUpdate({ scrollTop, clientHeight, scrollHeight }, data);
+    return callback(arr);
+  }
+
+  scrollScheule = (point, data) => {
+    const { scrollTop, clientHeight, scrollHeight } = point;
+    if (scrollHeight - scrollTop === clientHeight) {
+      // console.log('bottom', this.tempImageData);
+      const images = [];
+      for (let i = 0; i < 18; i += 1) {
+        images.push({id: data.length + (i + 1)});
+      }
+      return images;
+    }
+    return [];
+  };
+}
+
+
+export default GalleryController;

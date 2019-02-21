@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
-import rafSchedule from 'raf-schd';
+import React, { Component } from "react";
 
-import Spinner from '../../components/spinner/Spinner';
-import Wrapper from './PhotoListStyle';
-import GalleryButton from '../../components/galleryButton/GalleryButton';
+import Spinner from "../../components/spinner/Spinner";
+import Wrapper from "./PhotoListStyle";
+import GalleryButton from "../../components/galleryButton/GalleryButton";
 
 class photoList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      data: [],
+      data: []
     };
 
-    this.handleScroll = this.handleScroll.bind(this);
-
-    // Create a new function to schedule updates.
-    // 스크롤 이벤트 호출 최적화 를 위해 rafSchedule 사용
-    this.scheduleUpdate = rafSchedule(this.scrollScheule);
-
+    this.controller = props.controller;
     this.isLastChunk = false;
   }
 
@@ -27,40 +21,22 @@ class photoList extends Component {
   }
 
   componentDidMount() {
-    const { data } = this.state;
-    for (let i = 0; i < 18; i += 1) {
-      data.push({
-        id: i,
-      });
-    }
+    this.controller.initialize(this.state.data, data =>
+      this.setState({ data })
+    );
+  }
 
-    this.setState({
+  handleScroll = (point, data) => {
+    this.controller.handleScroll(
+      point,
       data,
-    });
-  }
-
-  handleScroll(e) {
-    const { scrollTop, clientHeight, scrollHeight } = e.nativeEvent.target;
-
-    // When we receive a scroll event, schedule an update.
-    // If we receive many updates within a frame, we'll only publish the latest value.
-    this.scheduleUpdate({ scrollTop, clientHeight, scrollHeight });
-  }
-
-  scrollScheule = (point) => {
-    const { scrollTop, clientHeight, scrollHeight } = point;
-    if (scrollHeight - scrollTop === clientHeight) {
-      // console.log('bottom', this.tempImageData);
-      const { data } = this.state;
-      const images = [];
-      for (let i = 0; i < 18; i += 1) {
-        images.push({id: data.length + (i + 1)});
-      }
-      this.setState({ data: data.concat(images) });
-    }
+      images => this.setState(prevState => ({
+        data: prevState.data.concat(images),
+      })),
+    );
   };
 
-  renderThumbnailList = (data) => {
+  renderThumbnailList = data => {
     return data.map((item, idx) => <GalleryButton key={idx} data={item} />);
   };
 
@@ -68,10 +44,8 @@ class photoList extends Component {
     const { data } = this.state;
 
     if (data.length < 1) return <Spinner />;
-
-    // console.log(data);
     return (
-      <photo-list onScroll={this.handleScroll}>
+      <photo-list onScroll={point => this.handleScroll(point, data)}>
         <Wrapper>
           <div className="photo_section">{this.renderThumbnailList(data)}</div>
         </Wrapper>
