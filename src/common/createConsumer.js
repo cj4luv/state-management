@@ -38,7 +38,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
   const displayName = WrappedComponent.displayName || WrappedComponent.name || 'component';
   consumer.displayName = `consumer(${displayName})`;
 
-  console.log('displayName', displayName);
+  // console.log('displayName', consumer.displayName);
 
   return consumer;
 };
