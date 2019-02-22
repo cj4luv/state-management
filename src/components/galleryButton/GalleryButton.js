@@ -107,4 +107,6 @@ GalleryButton.defaultProps = {
   selectImageArr: []
 };
 
+// console.log('Consumer', Consumer(defaultMapContextToProps)(GalleryButton));
+
 export default Consumer(defaultMapContextToProps)(GalleryButton);
