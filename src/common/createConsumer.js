@@ -24,9 +24,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
       <Consumer>
         {/* // Render-props 패턴 리드미 참조 */}
         {(context) => {
-
           // context에서 사용할 값 추출 첫번째 인자 어떤 함수를 실행 할건지 인자를 무엇으로 보낼지
-          console.log((mapContextToProps || defaultMapContextToProps));
           // mapContextToProps 정의가 되어 있지 않으면 defaultMapContextToProps 이 실행 된다. 왼쪽 부터 검사 진행 (단순 or 연산자다)
           const contextProps = (mapContextToProps || defaultMapContextToProps)(context);
           return <WrappedComponent {...contextProps} {...props} />;
@@ -35,7 +33,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
     );
   }
 
-  // 디버깅을 위한 displayName 설정 아직은 사용되지 않음
+  // displayName 설정(디버깅을 사용하기 ㅇ)
   const displayName = WrappedComponent.displayName || WrappedComponent.name || 'component';
   consumer.displayName = `consumer(${displayName})`;
 
