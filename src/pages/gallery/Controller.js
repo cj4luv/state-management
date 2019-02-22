@@ -23,11 +23,11 @@ class GalleryController {
   handleScroll = (e, data, callback) => {
     const { scrollTop, clientHeight, scrollHeight } = e.nativeEvent.target;
 
-    const arr = this.scheduleUpdate({ scrollTop, clientHeight, scrollHeight }, data);
-    return callback(arr);
+    return this.scheduleUpdate({ scrollTop, clientHeight, scrollHeight }, data, callback);
+    // return callback(arr);
   }
 
-  scrollScheule = (point, data) => {
+  scrollScheule = (point, data, callback) => {
     const { scrollTop, clientHeight, scrollHeight } = point;
     if (scrollHeight - scrollTop === clientHeight) {
       // console.log('bottom', this.tempImageData);
@@ -35,9 +35,8 @@ class GalleryController {
       for (let i = 0; i < 18; i += 1) {
         images.push({id: data.length + (i + 1)});
       }
-      return images;
+      return callback(images);
     }
-    return [];
   };
 }
 

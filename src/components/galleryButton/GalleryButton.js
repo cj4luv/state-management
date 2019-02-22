@@ -62,17 +62,9 @@ class GalleryButton extends Component {
   };
 
   render() {
-    const { data, selectImageArr, count } = this.props;
+    const { data, selectImageArr } = this.props;
     const { isSelect } = this.state;
-    let idx = 0;
-
-    if (count > 0 && selectImageArr.length > 0) {
-      idx = selectImageArr.findIndex(x => x.id === data.id);
-
-      if (idx === -1) {
-        idx = 0;
-      }
-    }
+    const idx = selectImageArr.findIndex(x => x.id === data.id);
 
     return (
       <Button

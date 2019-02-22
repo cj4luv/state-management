@@ -8,6 +8,7 @@ const createConsumer = Consumer => mapContextToProps => (WrappedComponent) => {
   };
 
   function consumer(props) {
+    console.log('props', props);
     return (
       <Consumer>
         {(context) => {
