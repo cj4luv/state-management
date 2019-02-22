@@ -13,7 +13,7 @@ class Gallery extends Component {
 
     this.controller = new Controller();
   }
-  
+
   componentDidUpdate(prevProps, prevState) {
     console.log("Gallery did update");
   }

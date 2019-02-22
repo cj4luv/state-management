@@ -101,12 +101,10 @@ GalleryButton.propTypes = {
 };
 
 GalleryButton.defaultProps = {
-  data: null,
+  data: {},
   actions: null,
   count: 0,
   selectImageArr: []
 };
-
-// console.log('Consumer', Consumer(defaultMapContextToProps)(GalleryButton));
 
 export default Consumer(defaultMapContextToProps)(GalleryButton);
