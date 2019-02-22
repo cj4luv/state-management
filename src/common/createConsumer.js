@@ -33,7 +33,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
     );
   }
 
-  // displayName 설정(디버깅을 사용하기 ㅇ)
+  // displayName 설정(디버깅을 사용하기 위해 추가 아직 사용 안함)
   const displayName = WrappedComponent.displayName || WrappedComponent.name || 'component';
   consumer.displayName = `consumer(${displayName})`;
 
