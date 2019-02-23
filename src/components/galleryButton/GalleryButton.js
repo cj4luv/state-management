@@ -71,7 +71,7 @@ class GalleryButton extends Component {
         style={styles.container}
         onClick={e => this.handleClick(e, data)}
       >
-        <p style={{ position: 'absolute' }}>{data.id + 1}</p>
+        <p style={{ position: 'absolute' }}>{Number(data.id) + 1}</p>
         {isSelect ? (
           <div style={styles.dimmer}>
             <div style={styles.circleActive}>{idx + 1}</div>
@@ -86,10 +86,12 @@ class GalleryButton extends Component {
 }
 
 const defaultMapContextToProps = value => {
+  console.log('hoc contxt to props', value);
+  if (!value) return null;
   return {
     actions: value.actions,
     count: value.count,
-    selectImageArr: value.selectImageArr
+    selectImageArr: value.selectImageArr,
   };
 };
 
@@ -101,7 +103,9 @@ GalleryButton.propTypes = {
 };
 
 GalleryButton.defaultProps = {
-  data: {},
+  data: {
+    id: 0,
+  },
   actions: null,
   count: 0,
   selectImageArr: []

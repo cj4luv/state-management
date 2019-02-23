@@ -11,6 +11,7 @@ import React from 'react';
 const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
   // mapContextToProps 값이 존재 하지 않을 경우 컨텍스트 값을 전부 전달
   const defaultMapContextToProps = (context) => {
+    console.log('defalut context', context);
     // defalut
     return { ...context };
   };
@@ -28,6 +29,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
           // mapContextToProps 정의가 되어 있지 않으면 defaultMapContextToProps 이 실행 된다. 왼쪽 부터 검사 진행 (단순 or 연산자다)
           // console.log('contextProps', mapContextToProps(context) || defaultMapContextToProps(context));
           const contextProps = (mapContextToProps || defaultMapContextToProps)(context);
+          console.log('hoc consumer', context, props);
           return <WrappedComponent {...contextProps} {...props} />;
         }}
       </Consumer>
