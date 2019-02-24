@@ -4,7 +4,7 @@ import Spinner from "../../components/spinner/Spinner";
 import Wrapper from "./PhotoListStyle";
 import GalleryButton from "../../components/galleryButton/GalleryButton";
 
-class photoList extends Component {
+class PhotoList extends Component {
   constructor(props) {
     super(props);
 
@@ -54,4 +54,4 @@ class photoList extends Component {
   }
 }
 
-export default photoList;
+export default PhotoList;

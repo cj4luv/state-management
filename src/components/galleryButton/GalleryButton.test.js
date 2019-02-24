@@ -4,6 +4,7 @@ import '../../setupTests';
 
 // ensure you're resetting modules before each test
 beforeEach(() => {
+  console.log('before each');
   jest.resetModules();
 });
 
@@ -20,12 +21,12 @@ const defaultContext = {
 
 // Takes the context data we want to test, or uses defaults
 const getGalleryButtonWithContext = (context = defaultContext) => {
-  console.log('get context', defaultContext);
+  console.log('before do mock');
   // Will then mock the LocalizeContext module being used in our GalleryButton component
   jest.doMock('./LocalizeContext', () => {
-    console.log('do mock');
+    console.log('doing mock');
     return {
-      LocalizeContext: {
+      Context: {
         Consumer: props => props.children(context),
       }
     };
@@ -36,7 +37,7 @@ const getGalleryButtonWithContext = (context = defaultContext) => {
   return require('./GalleryButton').default;
 };
 
-describe('<GalleryButton />', () => {
+describe('GalleryButton', () => {
   const GalleryButton = getGalleryButtonWithContext(defaultContext);
   let component = GalleryButton;
 
@@ -47,7 +48,6 @@ describe('<GalleryButton />', () => {
 
   it('should return default list of count', () => {
     // This will use the default context param since we pass nothing
-    // const GalleryButton = getGalleryButtonWithContext();
     console.log('create GalleryButton');
     const wrapper = mount(<GalleryButton />);
     console.log('did mounted', wrapper);
