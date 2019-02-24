@@ -29,7 +29,7 @@ const createConsumer = Consumer => mapContextToProps => WrappedComponent => {
           // mapContextToProps 정의가 되어 있지 않으면 defaultMapContextToProps 이 실행 된다. 왼쪽 부터 검사 진행 (단순 or 연산자다)
           // console.log('contextProps', mapContextToProps(context) || defaultMapContextToProps(context));
           const contextProps = (mapContextToProps || defaultMapContextToProps)(context);
-          console.log('crate consumer', context, props);
+          // console.log('crate consumer', context, props);
           return <WrappedComponent {...contextProps} {...props} />;
         }}
       </Consumer>
