@@ -79,4 +79,4 @@ Provider.defaultProps = {
   children: null,
 };
 
-export { Provider, Consumer, Context };
+export { Provider, Consumer };

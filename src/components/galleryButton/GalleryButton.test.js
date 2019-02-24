@@ -15,13 +15,12 @@ describe('GalleryButton', () => {
     component = shallow(<GalleryButton />);
   });
 
-  it('초기 렌더링 스냅샷 일치함', () => {
-    expect(component).toMatchSnapshot();
+  it('function called on click', () => {
+    component = mount(<GalleryButton />);
+    component.find('Button').simulate('click');
   });
 
-  it('function called on click', () => {
-    const component = mount(<GalleryButton />);
-    console.log(component);
-    // component.find('button').simulate('click');
+  it('초기 렌더링 스냅샷 일치함', () => {
+    expect(component).toMatchSnapshot();
   });
 });

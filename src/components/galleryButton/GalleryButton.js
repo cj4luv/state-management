@@ -36,7 +36,7 @@ class GalleryButton extends Component {
   }
 
   handleClick = (e, data) => {
-    console.log(data);
+    console.log('click', data);
     this.setState(prevState => {
       const { isSelect } = prevState;
       const { actions, count } = this.props;
@@ -86,8 +86,6 @@ class GalleryButton extends Component {
 }
 
 const defaultMapContextToProps = value => {
-  // console.log('defaultMapContextToProps', value);
-  // if (!value) return null;
   return {
     actions: value.actions,
     count: value.count,
