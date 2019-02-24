@@ -3,7 +3,18 @@ import PropTypes from 'prop-types';
 
 import createConsumer from '../../common/createConsumer';
 
-const Context = createContext();
+const defaultContext = {
+  state: { count: 0 },
+  selectImageArr: [],
+  actions: {
+    increment: () => {},
+    decrement: () => {},
+    add: () => {},
+    cut: () => {},
+  },
+};
+
+const Context = createContext(defaultContext);
 
 const { Provider: BaseProvider, Consumer: BaseConsumer, } = Context;
 

@@ -87,7 +87,7 @@ class GalleryButton extends Component {
 
 const defaultMapContextToProps = value => {
   // console.log('defaultMapContextToProps', value);
-  if (!value) return null;
+  // if (!value) return null;
   return {
     actions: value.actions,
     count: value.count,

@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`GalleryButton 초기 렌더링 스냅샷 일치함 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;
