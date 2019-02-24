@@ -8,9 +8,9 @@ import { Provider as CountProvider } from './Context';
 import Controller from './Controller';
 
 class Gallery extends Component {
-  constructor(props) {
-    super(props);
-
+  constructor(props, context) {
+    super(props, context);
+    console.log(context);
     this.controller = new Controller();
   }
 
