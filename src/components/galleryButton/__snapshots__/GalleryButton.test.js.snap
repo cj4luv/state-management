@@ -17,7 +17,16 @@ exports[`GalleryButton 초기 렌더링 스냅샷 일치함 1`] = `
         "id": 0,
       }
     }
-    selectImageArr={Array []}
+    selectImageArr={
+      Array [
+        Object {
+          "id": 0,
+        },
+        Object {
+          "id": 1,
+        },
+      ]
+    }
   >
     <Button
       onClick={[Function]}
@@ -146,7 +155,7 @@ exports[`GalleryButton 초기 렌더링 스냅샷 일치함 1`] = `
                   }
                 }
               >
-                0
+                1
               </div>
             </div>
             <img

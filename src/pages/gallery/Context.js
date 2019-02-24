@@ -4,8 +4,12 @@ import PropTypes from 'prop-types';
 import createConsumer from '../../common/createConsumer';
 
 const defaultContext = {
-  state: { count: 0 },
-  selectImageArr: [],
+  state: { count: 1 },
+  selectImageArr: [{
+    id: 0,
+  }, {
+    id: 1
+  }],
   actions: {
     increment: () => {},
     decrement: () => {},
