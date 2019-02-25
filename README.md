@@ -36,6 +36,7 @@ https://brunch.co.kr/@ultra0034/63
 3. 클라이언트 사이드에서의 보안
 4. 유닛 테스트 - https://velopert.com/3587
 5. context vs redux
+6. HTML, CSS 등 W3C 웹 표준 규격
 
 ## 리액트 컴포넌트 테스팅 시나리오
 1. 특정 props 에 따라 컴포넌트가 크래쉬 없이 잘 렌더링이 되는지 확인
