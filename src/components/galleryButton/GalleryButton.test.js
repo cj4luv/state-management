@@ -23,7 +23,7 @@ describe('GalleryButton', () => {
     console.log(wrapper.state());
 
     // 이벤트 진행후 결가값이 펄스 인지 체크
-    expect(wrapper.state().isSelect).toBe(false);
+    expect(wrapper.state().isSelect).toBe(true);
   });
 
   it('초기 렌더링 스냅샷 일치함', () => {

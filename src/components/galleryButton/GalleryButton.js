@@ -10,7 +10,7 @@ class GalleryButton extends Component {
     super(props);
 
     this.state = {
-      isSelect: false
+      isSelect: false,
     };
   }
 
@@ -28,7 +28,6 @@ class GalleryButton extends Component {
     const { selectImageArr } = this.props;
 
     const idx = selectImageArr.findIndex(x => x.id === nextProps.data.id);
-
     // 선택 된 이미지 부분의 넘버링 재설정을 위한 조건
     if (idx > -1 && isSelect) return true;
 

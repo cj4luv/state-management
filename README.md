@@ -12,22 +12,23 @@ https://brunch.co.kr/@ultra0034/63
 
 ## 추후 적용사항들
 1. react-virtualized - https://github.com/bvaughn/react-virtualized
-2. typescript - 자바스크립트는 동적언어 인데 정적으로 사용하기 위함으로
+2. typescript - 자바스크립트는 동적언어 인데 정적으로 사용하기 위함으로(리액트에 타입스크립트 도입시 재앙 - https://medium.com/@FourwingsY/react%EC%99%80-typescript%EC%9D%98-%EB%AF%B8%EB%AC%98%ED%95%9C-%EB%B6%88%EC%9D%BC%EC%B9%98-b8f0e2bfe05d)
 3. tslint
 4. react suspense
 5. react Fragments
 6. 개발 문서 작성 docz => https://www.docz.site
 7. UI 개발 및 테스트시 Storybook => https://storybook.js.org
-8. hooks
+8. react-hooks
 9. Immer - 불변함 유지 (global state 값을 변경 할때 필수)
 10. RX js
 11. ts-jest
 12. Enzyme - https://github.com/airbnb/enzyme (react 컴포넌트 테스트에 사용한다.)
 13. date-fns - 모멘트 js 대체용
-14. react-portal - modal 만들어보기
+14. react-portal - modal 만들어보기 - https://velog.io/@velopert/react-portals
 15. 코드 스플리팅 - https://reactjs.org/docs/code-splitting.html
 16. react lazy
 17. componentDidCatch && getDerivedStateFromError - https://reactjs.org/docs/error-boundaries.html
+18. cross-env - 절대 경로로 사용
 
 
 ## 추후 조사해야될 사항
@@ -37,6 +38,7 @@ https://brunch.co.kr/@ultra0034/63
 4. 유닛 테스트 - https://velopert.com/3587
 5. context vs redux
 6. HTML, CSS 등 W3C 웹 표준 규격
+7. Redux 사용
 
 ## 리액트 컴포넌트 테스팅 시나리오
 1. 특정 props 에 따라 컴포넌트가 크래쉬 없이 잘 렌더링이 되는지 확인

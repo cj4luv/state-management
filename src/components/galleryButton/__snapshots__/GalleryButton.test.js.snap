@@ -127,37 +127,17 @@ exports[`GalleryButton 초기 렌더링 스냅샷 일치함 1`] = `
             <div
               style={
                 Object {
-                  "backgroundColor": "rgba(0, 0, 0, 0.28)",
-                  "height": "100%",
-                  "left": 0,
+                  "backgroundColor": "transparent",
+                  "border": "solid 1px #fff",
+                  "borderRadius": 9,
+                  "height": 18,
                   "position": "absolute",
-                  "top": 0,
-                  "width": "100%",
+                  "right": 4,
+                  "top": 4,
+                  "width": 18,
                 }
               }
-            >
-              <div
-                style={
-                  Object {
-                    "alignItems": "center",
-                    "backgroundColor": "#01bafa",
-                    "borderRadius": 9,
-                    "color": "#fff",
-                    "display": "flex",
-                    "fontSize": 9,
-                    "fontWeight": "bold",
-                    "height": 18,
-                    "justifyContent": "center",
-                    "position": "absolute",
-                    "right": 4,
-                    "top": 4,
-                    "width": 18,
-                  }
-                }
-              >
-                1
-              </div>
-            </div>
+            />
             <img
               alt=""
               style={
