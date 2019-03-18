@@ -8,7 +8,9 @@ import GalleryButton from './GalleryButton';
 // 쪼개고 쪼개서 아주 작은 단위로 테스팅을 하는것을 의미합니다.
 
 // ensure you're resetting modules before each test
+// 테스트 전에 실행 되므로 테스트 전에 사전처리를 여기서 진행 한다.
 beforeEach(() => {
+  // 참고 - https://jestjs.io/docs/en/jest-object#jestresetmodules
   jest.resetModules();
 });
 
@@ -34,16 +36,20 @@ describe('GalleryButton', () => {
   it('function called on click', () => {
     // https://github.com/airbnb/enzyme/issues/814#issuecomment-362319285
 
-    // console.log('shallow comp', shallow(<GalleryButton />));
+    console.log('shallow comp', shallow(<GalleryButton />));
     // console.log('get 0', shallow(<GalleryButton />).get(0));
 
     // 데코레이팅(리액트에선 HOC) 된 리액트 컴포넌트 의 스테이트 값을 가져오기 위한 작업
     // shallow 함수 설명 https://airbnb.io/enzyme/docs/api/ShallowWrapper/shallow.html#
+    // mount 함수 설명 https://airbnb.io/enzyme/docs/api/ReactWrapper/mount.html
+    // shallow or mount 함수는 ReactWrapper 생성한다.
+    // 위 두함수의 차이점 https://medium.com/@sangboaklee/react-%ED%85%8C%EC%8A%A4%ED%8C%85-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-1c3719cee5af
     const wrapper = mount(shallow(<GalleryButton />).get(0));
     wrapper.find('Button').simulate('click');
-    console.log(wrapper.state());
+    console.log('state', wrapper.state());
 
-    // 이벤트 진행후 결가값이 펄스 인지 체크
+    // expect 를 통하여 특정 값이 우리가 예상한 값이 나왔는지 확인 할수 있게
+    // 이벤트 진행후 결가값이 펄스 인지 체크 - https://jestjs.io/docs/en/expect.html
     expect(wrapper.state().isSelect).toBe(true);
   });
 
