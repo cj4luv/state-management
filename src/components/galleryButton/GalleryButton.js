@@ -15,10 +15,11 @@ class GalleryButton extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("Image Button did update");
+    console.log("Image Button did update", this.state);
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('shouldComponentUpdate');
     const { isSelect } = this.state;
 
     if (nextState.isSelect !== isSelect) {
@@ -45,6 +46,7 @@ class GalleryButton extends Component {
       }
 
       if (!isSelect && count < 11) {
+        console.log('btn true');
         actions.increment();
         actions.add(data);
         return {
@@ -54,6 +56,7 @@ class GalleryButton extends Component {
 
       actions.decrement(data);
       actions.cut(data);
+      console.log('btn false');
       return {
         isSelect: false
       };
