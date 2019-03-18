@@ -45,3 +45,9 @@ https://brunch.co.kr/@ultra0034/63
 2. 이전에 렌더링했던 결과와, 지금 렌더링한 결과가 일치하는지 확인
 3. 특정 DOM 이벤트를 시뮬레이트 하여, 원하는 변화가 제대로 발생하는지 확인
 4. 렌더링된 결과물을 이미지 로 저장을 하여 픽셀을 하나하나 확인해서 모두 일치하는지 확인(스토리북 추천)
+
+
+## 데코레이터 관련 지식
+1. ES7 - decorator https://blog-kr.zoyi.co/channel-frontend-decorator/ (정식 스펙이 아님 stage-2 파티)
+2. decorator pattern http://blog.jeonghwan.net/javascript-decorator-pattern/
+3. Hoc pattern https://reactjs.org/docs/higher-order-components.html

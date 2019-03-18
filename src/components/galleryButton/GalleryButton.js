@@ -15,11 +15,10 @@ class GalleryButton extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("Image Button did update", this.state);
+    console.log("Image Button did update");
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate');
     const { isSelect } = this.state;
 
     if (nextState.isSelect !== isSelect) {

@@ -4,6 +4,9 @@ import Spinner from "../../components/spinner/Spinner";
 import Wrapper from "./PhotoListStyle";
 import GalleryButton from "../../components/galleryButton/GalleryButton";
 
+import withController from '../../pages/gallery/WithController';
+
+@withController
 class PhotoList extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +14,7 @@ class PhotoList extends Component {
     this.state = {
       data: []
     };
-
+    console.log('controller', props.controller);
     this.controller = props.controller;
     this.isLastChunk = false;
   }

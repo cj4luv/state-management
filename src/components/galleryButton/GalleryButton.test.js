@@ -33,7 +33,7 @@ describe('GalleryButton', () => {
     component = shallow(<GalleryButton />);
   });
 
-  it('function called on click', () => {
+  it('function click', () => {
     // https://github.com/airbnb/enzyme/issues/814#issuecomment-362319285
 
     console.log('shallow comp', shallow(<GalleryButton />));
