@@ -6,7 +6,7 @@ import GalleryButton from "../../components/galleryButton/GalleryButton";
 
 import withController from '../../pages/gallery/WithController';
 
-@withController
+@withController('Profile')
 class PhotoList extends Component {
   constructor(props) {
     super(props);

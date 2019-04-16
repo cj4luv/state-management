@@ -1,8 +1,8 @@
 import React from "react";
 import Controller from './Controller';
 
-function withController(WrappedComponent) {
-  console.log('call decorator function');
+const withController = data => (WrappedComponent) => {
+  console.log('call decorator function', data);
   return class extends React.Component {
     constructor(props) {
       super(props);
